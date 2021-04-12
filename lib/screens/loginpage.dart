@@ -1,3 +1,4 @@
+import 'package:flimmer/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import '../services/authservice.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                           backgroundColor: Colors.green,
                         ),
                       );
+                      Navigator.of(context).pushNamed(Dashboard.routeName);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -91,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                           backgroundColor: Colors.green,
                         ),
                       );
+                      Navigator.of(context).pushNamed(Dashboard.routeName);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
