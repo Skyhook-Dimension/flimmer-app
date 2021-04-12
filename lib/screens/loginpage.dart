@@ -57,14 +57,16 @@ class _LoginPageState extends State<LoginPage> {
                     if (val.data['success']) {
                       token = val.data['token'];
                       var info = await Authservice().getInfo(token);
-                      print(info);
+                      print(info.data);
+                      var name = info.data['msg'];
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Authenticated'),
                           backgroundColor: Colors.green,
                         ),
                       );
-                      Navigator.of(context).pushNamed(Dashboard.routeName);
+                      Navigator.of(context)
+                          .pushNamed(Dashboard.routeName, arguments: name);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
