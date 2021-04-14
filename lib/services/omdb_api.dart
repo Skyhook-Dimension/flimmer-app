@@ -1,27 +1,24 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 import '../models/movie_model.dart';
 
 class OmdbApi {
   Dio dio = new Dio();
 
-  final List<MovieModel> loadedMovies = [];
   Future<List<MovieModel>> searchMovie(String name) async {
-    final url = 'http://www.omdbapi.com';
+    final url = Uri.parse('http://www.omdbapi.com/?apikey=e6aefcb6&s=$name');
+    final List<MovieModel> loadedMovies = [];
     try {
-      final response = await dio.get(
+      final response = await http.get(
         url,
-        queryParameters: {
-          'apikey': 'e6aefcb6',
-          's': name,
-        },
       );
-      final extractedData = jsonDecode(response.data) as Map<String, dynamic>;
-      //print(jsonDecode(response.data['Search'].toString()));
-      print(extractedData['Search']);
-      extractedData['Search'].forEach(
-        (key, value) {
+      final extractedData = jsonDecode(response.body) as Map<String, dynamic>;
+      print(extractedData.values.elementAt(0)[0]);
+      extractedData.values.elementAt(0).forEach(
+        (value) {
           loadedMovies.add(
             MovieModel(
               imdbID: value['imdbID'],
@@ -35,7 +32,8 @@ class OmdbApi {
       );
       return loadedMovies;
     } catch (e) {
-      print(e.toString());
+      print('Error ' + e.toString());
     }
+    return loadedMovies;
   }
 }
