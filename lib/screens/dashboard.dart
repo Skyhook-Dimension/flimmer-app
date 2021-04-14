@@ -11,9 +11,10 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
+    var name = ModalRoute.of(context).settings.arguments as String;
     return Scaffold(
       body: Container(
-        child: Text('hello'),
+        child: Text('hello $name'),
       ),
     );
   }
