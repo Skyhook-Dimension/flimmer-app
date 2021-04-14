@@ -5,11 +5,8 @@ import 'package:flimmer/services/omdb_api.dart';
 import 'package:flutter/foundation.dart';
 import 'package:rxdart/rxdart.dart';
 
-enum APIError { rateLimitExceeded }
-
 class MovieSearchService {
   MovieSearchService({@required this.apiWrapper}) {
-   
     _results = _searchTerms
         .debounce((_) => TimerStream(true, Duration(milliseconds: 250)))
         .switchMap((query) async* {

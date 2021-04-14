@@ -55,9 +55,15 @@ class MovieSearchDelegate extends SearchDelegate<MovieModel> {
                       leading: ClipRRect(
                           borderRadius: BorderRadius.all(
                               Radius.circular(1.0)), //add border radius here
-                          child: Image(
-                            image: NetworkImage(result[index].poster),
-                          ) //add image location here
+                          child: result[index].poster == 'N/A'
+                              ? Container(
+                                  width: 30,
+                                  height: 50,
+                                  color: Colors.amber,
+                                )
+                              : Image(
+                                  image: NetworkImage(result[index].poster),
+                                ) //add image location here
                           ),
                       title: Text(result[index].title), // movie details
                       subtitle: Text(result[index].year), // movie details
