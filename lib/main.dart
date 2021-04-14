@@ -4,8 +4,6 @@ import './screens/dashboard.dart';
 
 import './screens/moviesearch.dart';
 
-
-
 void main() {
   runApp(MyApp());
 }
@@ -14,14 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Flimmer Auth",
-
+      title: "Flimmer",
       home: MovieSearch(),
-      routes: {
-   Dashboard.routeName : (ctx)=> Dashboard()
-
-      },
-
+      routes: {Dashboard.routeName: (ctx) => Dashboard()},
     );
   }
 }

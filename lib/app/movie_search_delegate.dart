@@ -46,33 +46,35 @@ class MovieSearchDelegate extends SearchDelegate<MovieModel> {
       builder: (context, AsyncSnapshot<List<MovieModel>> snapshot) {
         if (snapshot.hasData) {
           final List<MovieModel> result = snapshot.data;
-          return ListView.builder(
-              itemCount: result.length,
-              itemBuilder: (BuildContext ctxt, int index) {
-                return Column(
-                  children: [
-                    ListTile(
-                      leading: ClipRRect(
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(1.0)), //add border radius here
-                          child: result[index].poster == 'N/A'
-                              ? Container(
-                                  width: 30,
-                                  height: 50,
-                                  color: Colors.amber,
-                                )
-                              : Image(
-                                  image: NetworkImage(result[index].poster),
-                                ) //add image location here
-                          ),
-                      title: Text(result[index].title), // movie details
-                      subtitle: Text(result[index].year), // movie details
-                      dense: true,
-                    ),
-                    Divider(),
-                  ],
-                );
-              });
+          return result.isEmpty
+              ? Center(child: Text('No Resuls Found !'))
+              : ListView.builder(
+                  itemCount: result.length,
+                  itemBuilder: (BuildContext ctxt, int index) {
+                    return Column(
+                      children: [
+                        ListTile(
+                          leading: ClipRRect(
+                              borderRadius: BorderRadius.all(Radius.circular(
+                                  1.0)), //add border radius here
+                              child: result[index].poster == 'N/A'
+                                  ? Container(
+                                      width: 30,
+                                      height: 50,
+                                      color: Colors.amber,
+                                    )
+                                  : Image(
+                                      image: NetworkImage(result[index].poster),
+                                    ) //add image location here
+                              ),
+                          title: Text(result[index].title), // movie details
+                          subtitle: Text(result[index].year), // movie details
+                          dense: true,
+                        ),
+                        Divider(),
+                      ],
+                    );
+                  });
         } else {
           return Center(child: CircularProgressIndicator());
         }
