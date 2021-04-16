@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class Msg {
+class FlimModel {
   int likes;
   String sId;
   String userId;
@@ -10,7 +10,7 @@ class Msg {
   String movieYear;
   String movieId;
 
-  Msg({
+  FlimModel({
     this.likes,
     this.sId,
     @required this.userId,
