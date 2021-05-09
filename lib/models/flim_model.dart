@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class FlimModel {
+class FlimModel with ChangeNotifier {
   int likes;
   String sId;
   String userId;
