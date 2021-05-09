@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/loginpage.dart';
 import './screens/dashboard.dart';
+import './screens/createflims.dart';
 
 import './screens/moviesearch.dart';
 
@@ -14,7 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flimmer",
       home: MovieSearch(),
-      routes: {Dashboard.routeName: (ctx) => Dashboard()},
+      routes: {
+        Dashboard.routeName: (ctx) => Dashboard(),
+        CreateFilims.routeName: (ctx) => CreateFilims()
+      },
     );
   }
 }

@@ -13,6 +13,12 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     var name = ModalRoute.of(context).settings.arguments as String;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(Dashboard.routeName);
+        },
+        child: Icon(Icons.movie_filter_rounded),
+      ),
       body: Container(
         child: Text('hello $name'),
       ),
