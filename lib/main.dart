@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flimmer",
       home: MovieSearch(),
-      routes: {
-        Dashboard.routeName: (ctx) => Dashboard(),
-        CreateFilims.routeName: (ctx) => CreateFilims()
-      },
+      debugShowCheckedModeBanner: false,
+      routes: {Dashboard.routeName: (ctx) => Dashboard()},
     );
   }
 }
