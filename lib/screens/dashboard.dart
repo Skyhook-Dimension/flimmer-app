@@ -1,3 +1,4 @@
+import 'package:flimmer/screens/createflims.dart';
 import 'package:flutter/material.dart';
 import '../services/authservice.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +16,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(Dashboard.routeName);
+          Navigator.of(context).pushNamed(CreateFlims.routeName);
         },
         child: Icon(Icons.movie_filter_rounded),
       ),

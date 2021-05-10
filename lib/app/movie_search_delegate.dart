@@ -31,12 +31,15 @@ class MovieSearchDelegate extends SearchDelegate<MovieModel> {
   @override
   Widget buildResults(BuildContext context) {
     if (query.isEmpty) {
-      return Container();
+      searchService.searchMovie(query);
+      return buildMatchingSuggestions(context);
       //popular searches can be implemeted
     }
     // always search if submitted
-    searchService.searchMovie(query);
-    return buildMatchingSuggestions(context);
+
+    return Container(
+      child: Text(query),
+    );
   }
 
   Widget buildMatchingSuggestions(BuildContext context) {
@@ -54,6 +57,9 @@ class MovieSearchDelegate extends SearchDelegate<MovieModel> {
                     return Column(
                       children: [
                         ListTile(
+                          onTap: () {
+                            close(context, result[index]);
+                          },
                           leading: ClipRRect(
                               borderRadius: BorderRadius.all(Radius.circular(
                                   1.0)), //add border radius here

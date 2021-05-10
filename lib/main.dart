@@ -14,9 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Flimmer",
-      home: MovieSearch(),
+      home: Dashboard(),
       debugShowCheckedModeBanner: false,
-      routes: {Dashboard.routeName: (ctx) => Dashboard()},
+      routes: {
+        Dashboard.routeName: (ctx) => Dashboard(),
+        CreateFlims.routeName: (ctx) => CreateFlims(),
+        MovieSearch.routeName: (ctx) => MovieSearch(),
+      },
     );
   }
 }

@@ -7,6 +7,7 @@ import '../services/authservice.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MovieSearch extends StatelessWidget {
+  static const routeName = '/searchfilms';
   void _showSearch(BuildContext context) async {
     final searchService = MovieSearchService(apiWrapper: OmdbApi());
     final user = await showSearch<MovieModel>(
@@ -14,7 +15,9 @@ class MovieSearch extends StatelessWidget {
       delegate: MovieSearchDelegate(searchService),
     );
     searchService.dispose();
-    print(user);
+    print('user');
+    print(user.imdbID);
+    print('user');
   }
 
   @override
