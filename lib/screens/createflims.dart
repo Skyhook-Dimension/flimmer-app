@@ -4,6 +4,7 @@ import 'package:flimmer/models/movie_model.dart';
 import 'package:flimmer/screens/moviesearch.dart';
 import 'package:flimmer/services/movie_search_service.dart';
 import 'package:flimmer/services/omdb_api.dart';
+import 'package:flimmer/services/postservice.dart';
 import 'package:flutter/material.dart';
 import '../services/authservice.dart';
 
@@ -16,6 +17,7 @@ class CreateFlims extends StatefulWidget {
 }
 
 class _CreateFlimsState extends State<CreateFlims> {
+  final _postservice = PostService();
   final _displaynameFocusNode = FocusNode();
 
   final _form = GlobalKey<FormState>();
@@ -87,6 +89,7 @@ class _CreateFlimsState extends State<CreateFlims> {
 
     // TODO : Add the adding logic
 
+    await _postservice.postflim(_editedProduct);
     setState(() {
       _isLoading = false;
     });
@@ -138,7 +141,8 @@ class _CreateFlimsState extends State<CreateFlims> {
                             moviePoster: _editedProduct.moviePoster,
                             movieYear: _editedProduct.movieYear,
                             likes: 0,
-                            movieTitle: _editedProduct.movieTitle);
+                            movieTitle: _editedProduct.movieTitle,
+                            movieId: _editedProduct.movieId);
                       },
                     ),
                     !_ismovie

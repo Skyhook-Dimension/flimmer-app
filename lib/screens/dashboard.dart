@@ -1,3 +1,4 @@
+import 'package:flimmer/models/flim_model.dart';
 import 'package:flimmer/screens/createflims.dart';
 import 'package:flutter/material.dart';
 import '../services/authservice.dart';
@@ -10,9 +11,21 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  Future<void> _refreshFlims(BuildContext context) async {
+    // await Provider.of<Msg>(context, listen: false).fetchAndSetProducts();
+  }
+
+  @override
+  void initState() {
+    // await Provider.of<Msg>(context, listen: false).fetchAndSetProducts();
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    var name = ModalRoute.of(context).settings.arguments as String;
+    // var name = ModalRoute.of(context).settings.arguments as String;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -20,8 +33,22 @@ class _DashboardState extends State<Dashboard> {
         },
         child: Icon(Icons.movie_filter_rounded),
       ),
-      body: Container(
-        child: Text('hello $name'),
+      appBar: AppBar(title: Text('DashBoard')),
+      body: RefreshIndicator(
+        onRefresh: () => _refreshFlims(context),
+        child: Padding(
+            padding: EdgeInsets.all(8),
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (_, i) => Column(
+                children: [
+                  ListTile(
+                    title: Text('HII'),
+                  ),
+                  Divider(),
+                ],
+              ),
+            )),
       ),
     );
   }
