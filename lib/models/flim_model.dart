@@ -9,15 +9,16 @@ class Msg {
   String moviePoster;
   String movieYear;
   String movieId;
+  DateTime createdAt;
 
-  Msg({
-    this.likes,
-    this.sId,
-    @required this.userId,
-    @required this.flimBody,
-    this.movieTitle,
-    this.moviePoster,
-    this.movieYear,
-    this.movieId,
-  });
+  Msg(
+      {this.likes,
+      this.sId,
+      @required this.userId,
+      @required this.flimBody,
+      this.movieTitle,
+      this.moviePoster,
+      this.movieYear,
+      this.movieId,
+      this.createdAt});
 }
