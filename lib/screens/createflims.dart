@@ -39,7 +39,6 @@ class _CreateFlimsState extends State<CreateFlims> {
     if (_isInit) {
       _initValues = {
         'displayname': "_editedProduct.displayname",
-        // 'imageUrl': _editedProduct.imageUrl,
         'imageUrl': "editedProduct.imageUrl",
       };
     }
@@ -71,7 +70,8 @@ class _CreateFlimsState extends State<CreateFlims> {
         moviePoster: result.poster,
         movieYear: result.year,
         likes: 0,
-        movieTitle: result.title);
+        movieTitle: result.title,
+        movieId: result.imdbID);
     print('user');
     print(result.imdbID);
     print('user');
@@ -86,8 +86,6 @@ class _CreateFlimsState extends State<CreateFlims> {
     setState(() {
       _isLoading = true;
     });
-
-    // TODO : Add the adding logic
 
     await _postservice.postflim(_editedProduct);
     setState(() {

@@ -17,6 +17,7 @@ class PostService {
           'userId': 'qsq',
           'movieTitle': flim.movieTitle,
           'movieYear': flim.movieYear,
+          'moviePoster' : flim.moviePoster,
         },
         options: Options(contentType: Headers.formUrlEncodedContentType),
       );
