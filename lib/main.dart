@@ -1,3 +1,4 @@
+import 'package:flimmer/screens/profilepage.dart';
 import 'package:flutter/material.dart';
 import './screens/loginpage.dart';
 import './screens/dashboard.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         Dashboard.routeName: (ctx) => Dashboard(),
         CreateFlims.routeName: (ctx) => CreateFlims(),
         MovieSearch.routeName: (ctx) => MovieSearch(),
+        UserProfilePage.routeName: (ctx) => UserProfilePage(),
       },
     );
   }

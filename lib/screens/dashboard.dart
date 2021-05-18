@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flimmer/models/flim_model.dart';
 import 'package:flimmer/models/flimposts.dart';
 import 'package:flimmer/screens/createflims.dart';
+import 'package:flimmer/screens/profilepage.dart';
 import 'package:flutter/material.dart';
 import '../services/authservice.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -95,6 +96,38 @@ class _DashboardState extends State<Dashboard> {
     // var name = ModalRoute.of(context).settings.arguments as String;
 
     return Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Color(0xFF6200EE),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white.withOpacity(.60),
+          selectedFontSize: 14,
+          unselectedFontSize: 14,
+          onTap: (value) {
+            if (value == 0) {
+              ;
+            } else if (value == 1) {
+              Navigator.of(context).pushNamed(UserProfilePage.routeName);
+            } else if (value == 2) {
+              ;
+            }
+            // Respond to item press.
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+              label: 'Profile',
+              icon: Icon(Icons.account_circle_rounded),
+            ),
+            BottomNavigationBarItem(
+              label: 'Logout',
+              icon: Icon(Icons.exit_to_app),
+            ),
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.of(context).pushNamed(CreateFlims.routeName);
