@@ -38,40 +38,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
     // list = Provider.of<Audios>(context).countlikes(curruser.userid);
 
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFF6200EE),
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white.withOpacity(.60),
-        selectedFontSize: 14,
-        unselectedFontSize: 14,
-        onTap: (value) {
-          if (value == 0) {
-            Navigator.of(context).pushNamed(Dashboard.routeName);
-          } else if (value == 1) {
-            // Navigator.of(context).pushNamed(UserProfilePage.routeName);
-
-            ;
-          } else if (value == 2) {
-            ;
-          }
-          // Respond to item press.
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'Profile',
-            icon: Icon(Icons.account_circle_rounded),
-          ),
-          BottomNavigationBarItem(
-            label: 'Logout',
-            icon: Icon(Icons.exit_to_app),
-          ),
-        ],
-      ),
       body: Stack(
         children: [
           Column(
