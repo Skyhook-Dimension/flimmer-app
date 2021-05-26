@@ -20,62 +20,11 @@ class _DashboardState extends State<Dashboard> {
   Dio dio = new Dio();
   Future<void> _refreshFlims(BuildContext context) async {
     _posts.refresh();
+
     return;
     // await Provider.of<Msg>(context, listen: false).fetchAndSetProducts();
   }
 
-  // Future<void> fetchten(String id) async {
-  //   // await Provider.of<Msg>(context, listen: false).fetchAndSetProducts();
-
-  //   var response;
-  //   try {
-  //     if (id == null) {
-  //       response = await dio.get(
-  //         'https://flutter-autho.herokuapp.com/nextten',
-  //         options: Options(
-  //           headers: {},
-  //         ),
-  //       );
-  //     } else {
-  //       response = await dio.get(
-  //         'https://flutter-autho.herokuapp.com/nextten',
-  //         options: Options(
-  //           headers: {
-  //             'id': id,
-  //           },
-  //         ),
-  //       );
-  //     }
-  //   } on DioError catch (e) {
-  //     print(e.toString());
-  //     return;
-  //   }
-  //   var extractedData = jsonDecode(response.toString()) as Map<String, dynamic>;
-
-  //   print(extractedData.values.elementAt(1));
-
-  //   extractedData.values.elementAt(1).forEach(
-  //     (value) {
-  //       flimitems.add(
-  //         Msg(
-  //           userId: value['userId'],
-  //           flimBody: value['flimBody'],
-  //           likes: value['likes'] as int,
-  //           movieId: value['movieId'],
-  //           moviePoster: value['moviePoster'],
-  //           movieTitle: value['movieTitle'],
-  //           movieYear: value['movieYear'],
-  //           sId: value['_id'],
-  //           // createdAt: value['createdAt'] as DateTime,
-  //         ),
-  //       );
-  //     },
-  //   );
-
-  //   setState(() {});
-  //   // print(response['msg'][0]);
-  //   return;
-  // }
   final scrollController = ScrollController();
   @override
   void initState() {
@@ -96,45 +45,12 @@ class _DashboardState extends State<Dashboard> {
     // var name = ModalRoute.of(context).settings.arguments as String;
 
     return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Color(0xFF6200EE),
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(.60),
-          selectedFontSize: 14,
-          unselectedFontSize: 14,
-          onTap: (value) {
-            if (value == 0) {
-              ;
-            } else if (value == 1) {
-              Navigator.of(context).pushNamed(UserProfilePage.routeName);
-            } else if (value == 2) {
-              ;
-            }
-            // Respond to item press.
-          },
-          items: [
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: Icon(Icons.home),
-            ),
-            BottomNavigationBarItem(
-              label: 'Profile',
-              icon: Icon(Icons.account_circle_rounded),
-            ),
-            BottomNavigationBarItem(
-              label: 'Logout',
-              icon: Icon(Icons.exit_to_app),
-            ),
-          ],
-        ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
+          onPressed: () async {
             Navigator.of(context).pushNamed(CreateFlims.routeName);
           },
           child: Icon(Icons.movie_filter_rounded),
         ),
-        appBar: AppBar(title: Text('DashBoard')),
         body: StreamBuilder(
           stream: _posts.stream,
           builder: (BuildContext _context, AsyncSnapshot _snapshot) {

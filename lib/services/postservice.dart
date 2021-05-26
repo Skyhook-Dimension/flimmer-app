@@ -17,14 +17,13 @@ class PostService {
           'userId': 'qsq',
           'movieTitle': flim.movieTitle,
           'movieYear': flim.movieYear,
-          'moviePoster' : flim.moviePoster,
+          'moviePoster': flim.moviePoster,
         },
         options: Options(contentType: Headers.formUrlEncodedContentType),
       );
       print(response.toString());
       final extractedData = jsonDecode(response.toString());
-    
-      return "OK";
+      return "Your Flim has been posted";
     } on DioError catch (e) {
       print(e.toString());
       return e.toString();

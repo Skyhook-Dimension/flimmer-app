@@ -87,11 +87,13 @@ class _CreateFlimsState extends State<CreateFlims> {
       _isLoading = true;
     });
 
-    await _postservice.postflim(_editedProduct);
+    String msg = await _postservice.postflim(_editedProduct);
+
     setState(() {
       _isLoading = false;
     });
     Navigator.of(context).pop();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
     // print(_editedProduct.description);
   }
 
