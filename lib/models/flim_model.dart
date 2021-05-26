@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class FlimModel with ChangeNotifier {
+class Msg with ChangeNotifier {
   int likes;
   String sId;
   String userId;
@@ -9,15 +9,16 @@ class FlimModel with ChangeNotifier {
   String moviePoster;
   String movieYear;
   String movieId;
+  DateTime createdAt;
 
-  FlimModel({
-    this.likes,
-    this.sId,
-    @required this.userId,
-    @required this.flimBody,
-    this.movieTitle,
-    this.moviePoster,
-    this.movieYear,
-    this.movieId,
-  });
+  Msg(
+      {this.likes,
+      this.sId,
+      @required this.userId,
+      @required this.flimBody,
+      this.movieTitle,
+      this.moviePoster,
+      this.movieYear,
+      this.movieId,
+      this.createdAt});
 }
