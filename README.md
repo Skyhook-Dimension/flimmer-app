@@ -32,7 +32,7 @@ flutter pub get
 
 
 
-## Flimmer Features:
+<!-- ## Flimmer Features:
 
 * Splash
 * Login
@@ -75,7 +75,7 @@ flutter pub get
 ## Wiki
 
 Checkout [wiki](https://github.com/zubairehman/flutter-Flimmer-project/wiki) for more info
-
+ -->
 ## Conclusion
 
 I will be happy to answer any questions that you may have on this approach, and if you want to lend a hand with the Flimmer then please feel free to submit an issue and/or pull request 🙂
