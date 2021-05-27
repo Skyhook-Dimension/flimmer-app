@@ -8,13 +8,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
-class CreateFlims extends StatefulWidget {
-  static const routeName = '/createflims';
+class CreateScripts extends StatefulWidget {
+  static const routeName = '/CreateScripts';
   @override
-  _CreateFlimsState createState() => _CreateFlimsState();
+  _CreateScriptsState createState() => _CreateScriptsState();
 }
 
-class _CreateFlimsState extends State<CreateFlims> {
+class _CreateScriptsState extends State<CreateScripts> {
   final _postservice = PostService();
   final _displaynameFocusNode = FocusNode();
 
