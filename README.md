@@ -10,7 +10,9 @@ A Flimmer project created in flutter using OMDB Api and Provider. Flimmer suppor
 
 ## Getting Started
 
-The Flimmer contains the minimal implementation required to create a new library or project. The repository code is preloaded with some basic components like basic app architecture, app theme, constants and required dependencies to create a new project. By using boiler plate code as standard initializer, we can have same patterns in all the projects that will inherit it. This will also help in reducing setup & development time by allowing you to use same code pattern and avoid re-writing from scratch.
+The Flimmer is a complete app created using Flutter as frontend and Nodejs and MongoDb as a backend service. It is an app for Movie Buffs wher user can post their views for a particular movie or series. Users can also re-write old moviescripts with their own twists or can right new scripts of their own.
+
+The Flimmer main aim to create an open source cinema where movies are created **For the people, by the people & to the people**.
 
 ## How to Use 
 
