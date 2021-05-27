@@ -2,7 +2,7 @@
 
 ![flutter badge](	https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
-A Flimmer project created in flutter using MobX and Provider. Flimmer supports both web and mobile, clone the appropriate branches mentioned below:
+A Flimmer project created in flutter using OMDB Api and Provider. Flimmer supports both web and mobile, clone the appropriate branches mentioned below:
 
 * For Frontend: https://github.com/Skyhook-Dimension/flimmer
 * For Backend: https://github.com/Skyhook-Dimension/flimmer-backend
