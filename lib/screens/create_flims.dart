@@ -1,12 +1,12 @@
 import 'package:flimmer/app/movie_search_delegate.dart';
 import 'package:flimmer/models/flim_model.dart';
 import 'package:flimmer/models/movie_model.dart';
-import 'package:flimmer/screens/moviesearch.dart';
+import 'package:flimmer/screens/movie_search.dart';
 import 'package:flimmer/services/movie_search_service.dart';
 import 'package:flimmer/services/omdb_api.dart';
-import 'package:flimmer/services/postservice.dart';
+import 'package:flimmer/services/post_service.dart';
 import 'package:flutter/material.dart';
-import '../services/authservice.dart';
+import '../services/auth_service.dart';
 
 import 'package:flutter/material.dart';
 
@@ -67,15 +67,13 @@ class _CreateFlimsState extends State<CreateFlims> {
     _editedProduct = Msg(
         userId: _editedProduct.userId,
         flimBody: _editedProduct.flimBody,
-        moviePoster: result != null
-            ? result.poster
-            : 'https://www.mukwonagolibrary.org/wp-content/uploads/2018/07/no-movie.jpg',
-        movieYear: result != null ? result.year : 'null',
+        moviePoster: result.poster,
+        movieYear: result.year,
         likes: 0,
-        movieTitle: result != null ? result.title : 'null',
-        movieId: result != null ? result.imdbID : 'null');
+        movieTitle: result.title,
+        movieId: result.imdbID);
     print('user');
-    //print(result.imdbID);
+    print(result.imdbID);
     print('user');
   }
 

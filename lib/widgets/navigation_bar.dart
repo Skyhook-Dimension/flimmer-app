@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:spincircle_bottom_bar/modals.dart';
 import 'package:spincircle_bottom_bar/spincircle_bottom_bar.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import '../screens/dashboard.dart';
-import '../screens/profilepage.dart';
-import '../screens/createflims.dart';
+import '../screens/flims_feed.dart';
+import '../screens/profile_page.dart';
+import '../screens/create_flims.dart';
 
 class NavigationBar extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _NavigationBarState extends State<NavigationBar> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
-    Dashboard(),
+    FlimsFeed(),
     UserProfilePage(),
     Text(
       'Index 2: School',

@@ -1,4 +1,4 @@
-import 'package:flimmer/screens/dashboard.dart';
+import 'package:flimmer/screens/flims_feed.dart';
 import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatefulWidget {
@@ -52,17 +52,21 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     ),
                   ),
                   child: Column(children: [
-                    SizedBox(
-                      height: 80.0,
+                    Flexible(
+                      flex: 1,
+                      child: Container(),
                     ),
-                    CircleAvatar(
-                        radius: 65.0,
-                        // backgroundImage: NetworkImage(curruser.imageUrl != ''
-                        //     ? curruser.imageUrl
-                        //     : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'),
-                        backgroundColor: Colors.white,
-                        backgroundImage: NetworkImage(
-                            'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')),
+                    Flexible(
+                      flex: 5,
+                      child: CircleAvatar(
+                          radius: 50.0,
+                          // backgroundImage: NetworkImage(curruser.imageUrl != ''
+                          //     ? curruser.imageUrl
+                          //     : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'),
+                          backgroundColor: Colors.white,
+                          backgroundImage: NetworkImage(
+                              'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')),
+                    ),
                     SizedBox(
                       height: 10.0,
                     ),
@@ -133,7 +137,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
             ],
           ),
           Positioned(
-              top: MediaQuery.of(context).size.height * 0.405,
+              top: MediaQuery.of(context).size.height * 0.320,
               left: 20.0,
               right: 20.0,
               child: Card(
