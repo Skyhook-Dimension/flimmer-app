@@ -1,22 +1,20 @@
 import 'package:flimmer/app/movie_search_delegate.dart';
 import 'package:flimmer/models/flim_model.dart';
 import 'package:flimmer/models/movie_model.dart';
-import 'package:flimmer/screens/moviesearch.dart';
 import 'package:flimmer/services/movie_search_service.dart';
 import 'package:flimmer/services/omdb_api.dart';
-import 'package:flimmer/services/postservice.dart';
-import 'package:flutter/material.dart';
-import '../services/authservice.dart';
-
+import 'package:flimmer/services/post_service.dart';
 import 'package:flutter/material.dart';
 
-class CreateFlims extends StatefulWidget {
-  static const routeName = '/createflims';
+import 'package:flutter/material.dart';
+
+class CreateScripts extends StatefulWidget {
+  static const routeName = '/CreateScripts';
   @override
-  _CreateFlimsState createState() => _CreateFlimsState();
+  _CreateScriptsState createState() => _CreateScriptsState();
 }
 
-class _CreateFlimsState extends State<CreateFlims> {
+class _CreateScriptsState extends State<CreateScripts> {
   final _postservice = PostService();
   final _displaynameFocusNode = FocusNode();
 
@@ -67,13 +65,15 @@ class _CreateFlimsState extends State<CreateFlims> {
     _editedProduct = Msg(
         userId: _editedProduct.userId,
         flimBody: _editedProduct.flimBody,
-        moviePoster: result.poster,
-        movieYear: result.year,
+        moviePoster: result != null
+            ? result.poster
+            : 'https://www.mukwonagolibrary.org/wp-content/uploads/2018/07/no-movie.jpg',
+        movieYear: result != null ? result.year : 'null',
         likes: 0,
-        movieTitle: result.title,
-        movieId: result.imdbID);
+        movieTitle: result != null ? result.title : 'null',
+        movieId: result != null ? result.imdbID : 'null');
     print('user');
-    print(result.imdbID);
+    //print(result.imdbID);
     print('user');
   }
 

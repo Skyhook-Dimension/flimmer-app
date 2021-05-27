@@ -1,6 +1,6 @@
-import 'package:flimmer/screens/dashboard.dart';
+import 'package:flimmer/screens/flims_feed.dart';
 import 'package:flutter/material.dart';
-import '../services/authservice.dart';
+import '../services/auth_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       );
                       Navigator.of(context)
-                          .pushNamed(Dashboard.routeName, arguments: name);
+                          .pushNamed(FlimsFeed.routeName, arguments: name);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                           backgroundColor: Colors.green,
                         ),
                       );
-                      Navigator.of(context).pushNamed(Dashboard.routeName);
+                      Navigator.of(context).pushNamed(FlimsFeed.routeName);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(

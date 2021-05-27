@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class Msg {
+class Msg with ChangeNotifier {
   int likes;
   String sId;
   String userId;
