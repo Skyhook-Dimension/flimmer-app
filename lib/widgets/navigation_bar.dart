@@ -5,6 +5,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import '../screens/flims_feed.dart';
 import '../screens/profile_page.dart';
 import '../screens/create_flims.dart';
+import '../screens/new_script.dart';
 
 class NavigationBar extends StatefulWidget {
   @override
@@ -106,7 +107,9 @@ class _NavigationBarState extends State<NavigationBar> {
             ),
             SCItem(
               icon: Icon(Entypo.open_book),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(NewScript.routeNamed);
+              },
             ),
             //SCItem(icon: Icon(Icons.map), onPressed: () {}),
           ],
