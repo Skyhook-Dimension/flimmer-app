@@ -1,6 +1,6 @@
-# Flimmer Project
+# Flimmer Project     
 
-!(flutter badge)[https://img.shields.io/badge/flutter-2.0.2-blue]
+![flutter badge](	https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
 A Flimmer project created in flutter using MobX and Provider. Flimmer supports both web and mobile, clone the appropriate branches mentioned below:
 
