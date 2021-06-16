@@ -31,4 +31,19 @@ class Authservice {
       // return e.response;
     }
   }
+
+  getInfo(token) async {
+    try {
+      return await dio.get(
+        'https://flutter-autho.herokuapp.com/getinfo',
+        options: Options(
+          headers: {
+            'Authorization': 'Bearer ${token}',
+          },
+        ),
+      );
+    } on DioError catch (e) {
+      print(e.toString());
+    }
+  }
 }

@@ -2,7 +2,9 @@
     package="com.example.flimmer">
    <application
         android:label="flimmer"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
+        
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
