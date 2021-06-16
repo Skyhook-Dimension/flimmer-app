@@ -1,4 +1,4 @@
-# Flimmer Project     
+# Flimmer Project ![ongoing project](https://img.shields.io/badge/-ongoing%20project-red)
 
 ![flutter badge](	https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
