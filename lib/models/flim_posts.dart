@@ -28,14 +28,14 @@ class PostsModel {
     try {
       if (id == null) {
         response = await dio.get(
-          'https://flutter-autho.herokuapp.com/nextten',
+          'https://flutter-autho.herokuapp.com/nexttenflims',
           options: Options(
             headers: {},
           ),
         );
       } else {
         response = await dio.get(
-          'https://flutter-autho.herokuapp.com/nextten',
+          'https://flutter-autho.herokuapp.com/nexttenflims',
           options: Options(
             headers: {
               'id': id,
