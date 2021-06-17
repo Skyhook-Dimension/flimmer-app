@@ -1,3 +1,4 @@
+import 'package:flimmer/widgets/flim_post.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation_bar.dart';
 
